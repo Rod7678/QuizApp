@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 export default function QuestionProgress({timeout, onTimeout}){
     const [remainingTime, setRemainingTime] = useState(timeout);
     useEffect(()=>{
-        console.log('set Timeout');
+        // console.log('set Timeout');
         const timer =  setTimeout(onTimeout, timeout);
 
         return ()=> {
@@ -13,7 +13,7 @@ export default function QuestionProgress({timeout, onTimeout}){
     },[onTimeout, timeout])
     
     useEffect(()=>{
-        console.log('set Interval');
+        // console.log('set Interval');
         const interval =  setInterval(()=>{
         setRemainingTime((prevTime)=> prevTime -100);
        }, 100);
