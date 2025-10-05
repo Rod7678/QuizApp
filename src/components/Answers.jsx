@@ -1,7 +1,7 @@
 import { useRef } from "react";
 
 
-export default function Answers({answers, selectedAnswer, answerState, handleSelectAnswer}){
+export default function Answers({answers, selectedAnswer, answerState, onSelect}){
     const shuffledAnswers = useRef();
     if(!shuffledAnswers.current){
     shuffledAnswers.current = [...answers]; 
@@ -22,7 +22,7 @@ export default function Answers({answers, selectedAnswer, answerState, handleSel
 
 
                     return (<li key={answer} className="answer">
-                        <button onClick={()=>handleSelectAnswer(answer)} className={cssClass}>
+                        <button onClick={()=> onSelect(answer)} className={cssClass} disabled={answerState !== ''}>
                            {answer}
                         </button>
                     </li>
