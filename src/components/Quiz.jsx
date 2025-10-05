@@ -18,7 +18,7 @@ export default function Quiz(){
 
     const handleSkipAnswer = useCallback(()=> handleSelectAnswer(null) ,[handleSelectAnswer])
 
-    if(quizIsComplete){
+    if (quizIsComplete) {
         return (
             <div id="summary">
                 <img src={quizCompeteImg} alt="Trophy Icon" />
